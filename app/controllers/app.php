@@ -30,4 +30,14 @@ class App extends Controller
         }
         return get_the_title();
     }
+
+    public static function __get_field($field, $id = null)
+    {
+        return get_field($field, $id);
+    }
+
+    public static function __get_sub_field($field, $sub_field, $id = null)
+    {
+        return get_field($field, $id)[$sub_field];
+    }
 }
