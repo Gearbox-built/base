@@ -1,0 +1,42 @@
+//
+// Responsive
+// --------------------------------------------------
+//
+$pp-reduction: 0.8;
+//
+
+@mixin responsive--sizing($prop, $sizing) {
+  #{$prop}: rem-calc($sizing * $spacing-modifier-mobile);
+
+  @include from(pt) {
+    #{$prop}: rem-calc($sizing * $spacing-modifier-tab);
+  }
+
+  @include from(d) {
+    #{$prop}: rem-calc($sizing);
+  }
+}
+
+@mixin responsive--heading($font-size, $reduction: $pp-reduction) {
+  font-size: vw-at-bp($font-size * $reduction, pp);
+
+  @include from(lp) {
+    font-size: rem-calc($font-size * 0.8);
+  }
+
+  @include from(sd) {
+    font-size: rem-calc($font-size);
+  }
+}
+
+// Get bp value by name
+@function get-bp-value($name) {
+  @return rbp(get-slice-id($name));
+}
+
+// Get vw from px value at bp
+@function vw-at-bp($px, $bp) {
+  $bp-value: get-bp-value(pp);
+
+  @return #{($px / $bp-value) * 100)}vw;
+}

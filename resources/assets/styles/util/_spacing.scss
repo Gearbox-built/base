@@ -1,0 +1,44 @@
+//
+// Spacing Mixins
+// --------------------------------------------------
+
+// Spacing
+
+@mixin _spacing($spacing, $type, $position) {
+  $prop: #{$type}-#{$position};
+
+  @include responsive--sizing($prop, $spacing);
+}
+
+// Spacing Helper Mixins
+
+@mixin spacing-top($spacing: $spacing-y, $type:'padding') {
+  @include _spacing($spacing, $type, 'top');
+}
+
+@mixin spacing-bottom($spacing: $spacing-y, $type:'padding') {
+  @include _spacing($spacing, $type, 'bottom');
+}
+
+@mixin spacing-left($spacing: $spacing-x, $type:'padding') {
+  @include _spacing($spacing, $type, 'left');
+}
+
+@mixin spacing-right($spacing: $spacing-x, $type:'padding') {
+  @include _spacing($spacing, $type, 'right');
+}
+
+@mixin spacing-y($top: $spacing-y, $bottom: $top, $type: 'padding') {
+  @include spacing-top($top, $type);
+  @include spacing-bottom($bottom, $type);
+}
+
+@mixin spacing-x($left: $spacing-x, $right: $left, $type: 'padding') {
+  @include spacing-left($left, $type);
+  @include spacing-right($right, $type);
+}
+
+@mixin spacing($y, $x: $y) {
+  @include spacing-y($y);
+  @include spacing-x($x);
+}

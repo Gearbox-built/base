@@ -1,0 +1,27 @@
+//
+// Palette
+// --------------------------------------------------
+
+// Complementary colours
+@function complementary($color) {
+  @return adjust_hue($color, 180);
+}
+
+@function secondary($color) {
+  @return adjust_hue($color, 120);
+}
+
+@function tertiary($color) {
+  @return adjust_hue($color, -120);
+}
+
+// Function to grab colour from palette
+@function palette($palette, $tone: 'base') {
+  $return-color: map-get($palettes, $palette);
+
+  @if type-of(map-get($palettes, $palette)) == 'map' {
+    $return-color: map-get(map-get($palettes, $palette), $tone);
+  }
+
+  @return $return-color;
+}

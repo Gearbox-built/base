@@ -1,3 +1,8 @@
+//
+// Main
+// --------------------------------------------------
+
+@import "util/palette";
 @import "common/variables";
 
 /** Import everything from autoload */
@@ -9,15 +14,27 @@
  * Prefix your imports with `~` to grab from node_modules/
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
-// @import "~some-node-module";
+@import "~normalize.css";
+@import "~family.scss";
+@import "~breakpoint-sass";
+@import "~breakpoint-slicer";
 
 /** Import theme styles */
+
+// Common
 @import "common/global";
+@import "common/layout";
+@import "common/type";
+
+// components
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
 @import "components/wp-classes";
+
+// Layouts
 @import "layouts/header";
+@import "layouts/hero";
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";

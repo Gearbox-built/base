@@ -1,0 +1,54 @@
+//
+// Global
+// --------------------------------------------------
+
+// Images
+
+img {
+  display: block;
+}
+
+// Global
+
+html {
+  color: $color--text;
+  line-height: $line-height--base;
+  font-family: $font-family--body;
+  font-size: 16px;
+  font-weight: $font-weight--body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include from(sd) {
+    font-size: $font-size--base;
+  }
+
+  @include breakpoint(vld) {
+    font-size: $font-size--base * 1.1;
+  }
+
+  @include from(qhd) {
+    font-size: $font-size--base * 1.2;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  pre,
+  blockquote,
+  a,
+  time,
+  span,
+  svg,
+  input,
+  address,
+  button,
+  img {
+    opacity: 1;
+  }
+}
