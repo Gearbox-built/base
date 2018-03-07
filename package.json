@@ -103,6 +103,10 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "breakpoint-sass": "^2.7.1",
+    "breakpoint-slicer": "^2.0.0",
+    "family.scss": "^1.0.8",
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.0"
   }
 }
