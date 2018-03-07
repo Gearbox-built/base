@@ -19,6 +19,12 @@
 @import "~breakpoint-sass";
 @import "~breakpoint-slicer";
 
+/** Util */
+@import "util/rem";
+@import "util/responsive";
+@import "util/spacing";
+@import "util/object-fit";
+
 /** Import theme styles */
 
 // Common
