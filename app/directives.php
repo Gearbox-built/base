@@ -3,9 +3,13 @@
 namespace App;
 
 /**
- * ACF Blade directives
+ * Custom Blade directives
  */
 add_action('after_setup_theme', function () {
+
+    /**
+     * ACF Blade directives
+     */
 
     /**
      * Create field directive for get_field
@@ -34,6 +38,17 @@ add_action('after_setup_theme', function () {
 
         if($field) {
             return get_sub_field($field, $post);
+        }
+    });
+
+    /**
+     * Icon Blade directives
+     */
+
+    sage('blade')->compiler()->directive('icon', function ($id) {
+
+        if($id){
+            return '<svg class="icon icon--' . $id . '"><use xlink:href="' . asset_path("images/symbols.svg") . '#icon-' . $id . '"></use></svg>';
         }
     });
 });
