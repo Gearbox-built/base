@@ -1,2 +1,8 @@
-@php(the_content())
-{!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
+<article>
+  @if (have_rows('blocks'))
+    @while (have_rows('blocks'))
+      @php(the_row())
+      @include('blocks.' . get_row_layout(), App::getBlockData())
+    @endwhile
+  @endif
+</article>
