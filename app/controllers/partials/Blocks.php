@@ -18,7 +18,7 @@ trait Blocks
 
     public static function getBlockData()
     {
-        if (sizeof(self::$blocks) === 0) {
+        if (empty(self::$blocks)) {
             return;
         }
 
